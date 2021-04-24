@@ -1,0 +1,6 @@
+test
+gd_attach/bin
+library/bin/*
+addon/build
+injector/bin/*
+gd_attach/.vs
