@@ -2,7 +2,7 @@
 #ifndef GJGAMELEVEL_H
 #define GJGAMELEVEL_H
 
-#include "gd.h/include/gd.h"
+#include <gd.h>
 #include "pch.h"
 
 namespace gd {

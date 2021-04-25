@@ -1,0 +1,1 @@
+i686-w64-mingw32-g++ -static-libgcc -static-libstdc++ -o bin/injector.exe src/main.cpp

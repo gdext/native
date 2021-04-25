@@ -27,10 +27,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <assert.h>
 #include <memory.h>
 
-#include "kazmath/utility.h"
-#include "kazmath/mat3.h"
-#include "kazmath/vec3.h"
-#include "kazmath/quaternion.h"
+#include "../include/kazmath/utility.h"
+#include "../include/kazmath/mat3.h"
+#include "../include/kazmath/vec3.h"
+#include "../include/kazmath/quaternion.h"
 
 #ifndef NULL
 #define NULL    ((void *)0)

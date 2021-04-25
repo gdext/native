@@ -24,7 +24,7 @@ level_file* parseLevel(std::string str) {
 	std::istringstream f(str);
 	std::string s;
 
-	while (getline(f, s, ';'))
+	while (getline(f, s, '§'))
 		strings.push_back(s);
 
 	if (strings.size() != 2) return nullptr;
@@ -37,11 +37,19 @@ level_file* parseLevel(std::string str) {
 	return lvl;
 }
 
+bool level_loaded = false;
+
 namespace hooks {
 	namespace MenuLayer {
 
 		int __fastcall init(cocos2d::CCLayer* MenuLayer) {
 			using namespace cocos2d;
+			if (level_loaded) {
+				TerminateProcess(GetCurrentProcess(), 0);
+				return 0;
+			}
+
+			int ret = gates::MenuLayer::init(MenuLayer);
 
 			std::string appdata = getenv("APPDATA");
 
@@ -86,7 +94,8 @@ namespace hooks {
 			delete parsed;
 
 			showPlayLayer((gd::PlayLayer*)GD_Extern::PlayLayer::create(lvl));
-			return gates::MenuLayer::init(MenuLayer);
+			level_loaded = true;
+			return ret;
 		}
 
 	}

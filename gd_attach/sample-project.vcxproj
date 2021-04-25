@@ -75,11 +75,13 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)cappuccino-sdk\incl\cocos2dx;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\kazmath\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)cappuccino-sdk\incl\extensions;$(SolutionDir);$(SolutionDir)minhook\include;$(SolutionDir)gd.h\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)cappuccino-sdk\incl\cocos2dx;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\kazmath\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)cappuccino-sdk\incl\extensions;$(SolutionDir);$(SolutionDir)minhook\include;$(SolutionDir)gd.h\include</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -91,11 +93,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;CAPPUCCINOTEMPLATE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;CAPPUCCINOTEMPLATE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)cappuccino-sdk\incl\cocos2dx;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\kazmath\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)cappuccino-sdk\incl\extensions;$(SolutionDir);$(SolutionDir)minhook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cappuccino-sdk\incl\cocos2dx;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\kazmath\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)cappuccino-sdk\incl\extensions;$(SolutionDir);$(SolutionDir)minhook\include;$(SolutionDir)gd.h\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -111,11 +113,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;CAPPUCCINOTEMPLATE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;CAPPUCCINOTEMPLATE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)cappuccino-sdk\incl\cocos2dx;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\kazmath\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)cappuccino-sdk\incl\extensions;$(SolutionDir);$(SolutionDir)minhook\include;$(SolutionDir)gd.h\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)cappuccino-sdk\incl\cocos2dx;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\kazmath\include;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32;$(SolutionDir)cappuccino-sdk\incl\cocos2dx\platform\third_party\win32\OGLES;$(SolutionDir)cappuccino-sdk\incl\extensions;$(SolutionDir);$(SolutionDir)minhook\include;$(SolutionDir)gd.h\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -541,6 +543,44 @@
     <ClInclude Include="cappuccino-sdk\incl\extensions\spine\spine.h" />
     <ClInclude Include="extern\gd.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="gd.h\achievement_nodes\AchievementBar.h" />
+    <ClInclude Include="gd.h\achievement_nodes\AchievementNotifier.h" />
+    <ClInclude Include="gd.h\actions\CCCircleWave.h" />
+    <ClInclude Include="gd.h\audio_nodes\FMODAudioEngine.h" />
+    <ClInclude Include="gd.h\include\gd.h" />
+    <ClInclude Include="gd.h\include\gdMacros.h" />
+    <ClInclude Include="gd.h\include\GDProtocols.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\CCBlockLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\FLAlertLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\GJBaseGameLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\GJDropDownLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\GJListLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\LoadingCircle.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\LoadingLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\MenuLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\PauseLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\PlayLayer.h" />
+    <ClInclude Include="gd.h\layers_scenes_transitions_nodes\ScrollingLayer.h" />
+    <ClInclude Include="gd.h\manager_nodes\AchievementManager.h" />
+    <ClInclude Include="gd.h\manager_nodes\GameManager.h" />
+    <ClInclude Include="gd.h\manager_nodes\GameSoundManager.h" />
+    <ClInclude Include="gd.h\manager_nodes\GManager.h" />
+    <ClInclude Include="gd.h\menu_nodes\CCMenuItemSpriteExtra.h" />
+    <ClInclude Include="gd.h\menu_nodes\CCMenuItemToggler.h" />
+    <ClInclude Include="gd.h\scroll_nodes\BoomListView.h" />
+    <ClInclude Include="gd.h\scroll_nodes\CCContentLayer.h" />
+    <ClInclude Include="gd.h\scroll_nodes\CCIndexPath.h" />
+    <ClInclude Include="gd.h\scroll_nodes\CCScrollLayerExt.h" />
+    <ClInclude Include="gd.h\scroll_nodes\CustomListView.h" />
+    <ClInclude Include="gd.h\scroll_nodes\TableView.h" />
+    <ClInclude Include="gd.h\sprite_nodes\AnimatedShopKeeper.h" />
+    <ClInclude Include="gd.h\sprite_nodes\ButtonSprite.h" />
+    <ClInclude Include="gd.h\sprite_nodes\CCAnimatedSprite.h" />
+    <ClInclude Include="gd.h\sprite_nodes\CCSpritePlus.h" />
+    <ClInclude Include="gd.h\sprite_nodes\GameObject.h" />
+    <ClInclude Include="gd.h\sprite_nodes\PlayerObject.h" />
+    <ClInclude Include="gd.h\sprite_nodes\TextArea.h" />
+    <ClInclude Include="gd.h\text_input_nodes\CCTextInputNode.h" />
     <ClInclude Include="gjgamelevel.h" />
     <ClInclude Include="hooks.h" />
     <ClInclude Include="pch.h" />

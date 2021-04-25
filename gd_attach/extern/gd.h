@@ -11,6 +11,11 @@ namespace GD_Extern {
 			reinterpret_cast<decltype(init)>(base + 0x1907B0);
 	}
 
+	namespace PlayLayer {
+		inline int(__thiscall const* create)(cocos2d::CCObject* level) =
+			reinterpret_cast<decltype(create)>(base + 0x1FB6D0);
+	}
+
 	inline bool init() {
 		return base;
 	}

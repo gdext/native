@@ -47,7 +47,7 @@ DWORD WINAPI my_thread(void* hModule) {
 
     while (curr_pl == nullptr) std::this_thread::sleep_for(std::chrono::milliseconds(400));
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     auto dir = CCDirector::sharedDirector();
 
