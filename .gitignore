@@ -1,6 +1,8 @@
 test
-gd_attach/bin
+playtest/build
 library/bin/*
 addon/build
+addon/node_modules
+addon/bin
 injector/bin/*
 gd_attach/.vs

@@ -1,0 +1,3 @@
+[submodule "playtest/sub/MinHook"]
+	path = playtest/sub/MinHook
+	url = https://github.com/TsudaKageyu/MinHook.git
