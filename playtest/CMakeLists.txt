@@ -28,6 +28,7 @@ target_include_directories(
     sub/cocos2dx/platform/win32
     sub/extensions
     sub/MinHook/include
+    sub/asio
     sub/gd/include
     sub/gd
 )

@@ -5,6 +5,8 @@
 
 #include "../utils/base64.h"
 
+PlayLayerRef* cpl = nullptr;
+
 void SetStringPointer(gd::GDString* str, const char* text) {
 	int len = strlen(text);
 
@@ -23,7 +25,11 @@ void SetStringPointer(gd::GDString* str, const char* text) {
 struct level_file {
 	std::string level_name;
 	std::string level_string;
+    int         officialSong;
+    int         customSong;
 };
+
+bool j = false;
 
 level_file* parseLevel(std::string str) {
 	std::vector<std::string> strings;
@@ -34,17 +40,21 @@ level_file* parseLevel(std::string str) {
 	while (std::getline(f, s, (char)'§'))
 		strings.push_back(s);
 
-	if (strings.size() != 2) return nullptr;
+	if (strings.size() != 4) return nullptr;
 
 	level_file* lvl = new level_file {
 		base64_decode( strings.at(0) ),
-		strings.at(1)
+		strings.at(1),
+        std::stoi( strings.at(2) ),
+        std::stoi( strings.at(3) )
 	};
 
 	return lvl;
 }
 
 void MenuLayer::loadAll() {
+    if (j) return;
+
     std::string appdata = getenv("APPDATA");
 
     std::ifstream t(appdata + "\\gdext\\level.dat");
@@ -72,6 +82,9 @@ void MenuLayer::loadAll() {
     SetStringPointer(&lvl->uploadDate, "");
     SetStringPointer(&lvl->updateDate, "");
 
+    lvl->audioTrack = parsed->officialSong;
+    lvl->songID     = parsed->customSong;
+
     lvl->lowDetailMode = false;
     lvl->lowDetailModeToggled = false;
 
@@ -88,6 +101,8 @@ void MenuLayer::loadAll() {
     delete parsed;
 
     s_scheduledLayer = gd::PlayLayer::create(lvl);
+    cpl = new PlayLayerRef(s_scheduledLayer);
+
     isEnterable = true;
 }
 
@@ -95,20 +110,23 @@ void MenuLayer::enterLevel() {
     auto scene = cocos2d::CCScene::create();
     scene->addChild(s_scheduledLayer);
 
+    j = true;
+
     cocos2d::CCDirector::sharedDirector()->replaceScene(
         cocos2d::CCTransitionFade::create(0.5, scene)
     );
+    isEnterable = false;
 }
 
 void MenuLayer::pollEntry() {
     while (!isEnterable) Sleep(1);
-    Sleep(200);
+    Sleep(600);
 
     enterLevel();
 }
 
 bool __fastcall MenuLayer::initHook(MenuLayer* _self) {
-    if (isEnterable)
+    if (j)
         TerminateProcess( GetCurrentProcess(), 0 );
 
     if (!init(_self))

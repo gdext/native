@@ -26,6 +26,11 @@ template<typename T, typename U> constexpr size_t offsetOf(U T::*member) {
     return (char*)&((T*)nullptr->*member) - (char*)nullptr;
 }
 
+template<class T, class P>
+inline T& offset(P* ptr, unsigned int offset) {
+    return *(T*)((unsigned int)ptr + offset);
+}
+
 using unknown_t = uintptr_t;
 using edx_t = uintptr_t;
 

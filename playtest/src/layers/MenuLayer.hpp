@@ -1,6 +1,9 @@
 #pragma once
 
 #include "../offsets.hpp"
+#include "PlayLayer.hpp"
+
+extern PlayLayerRef* cpl;
 
 class MenuLayer : public cocos2d::CCLayer {
     public:

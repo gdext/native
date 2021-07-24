@@ -46,6 +46,8 @@ BOOL APIENTRY DllMain(
         // what the hell is this pie
         HANDLE _ = CreateThread(0, 0, load_thread, hModule, 0, nullptr);
         if (_) CloseHandle(_);
-    }
+    } else if (ul_reason_for_call == DLL_PROCESS_DETACH)
+        mod::unload();
+        
     return TRUE;
 }
